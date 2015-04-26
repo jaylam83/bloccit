@@ -18,8 +18,11 @@ posts = Post.all
     )
 end
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 73d6f0f22340e5f3c29c8c979d89e767499df9ab
 puts "Seed Finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
