@@ -28,6 +28,8 @@ gem 'bootstrap-sass'
 gem 'pry-rails', :group => :development
 #add devise for user authentication
 gem 'devise'
+#add figaro to handle sensitive data
+gem 'figaro', '1.0'
 
 
 group :development, :test do

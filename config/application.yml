@@ -1,7 +1,14 @@
-
-
-SECRET_KEY_BASE: 0408c0b42c6db4b08e41207f3be77d488208eb2feb8901246306f0916812840077914c7703e847171161a7025d2f7a79607d90d56cb54b8d871df8305e394c0c
-
-SENDGRID_PASSWORD: app36273499@heroku.com
-SENDGRID_USERNAME: n4usvek82184
-
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+SENDGRID_USERNAME: app36273499@heroku.com
+SENDGRID_PASSWORD: n4usvek82184
+SECRET_KEY_BASE: 1b8a1c9fcb01a1b1369a5b3c6d0202b44d3f7ad3e0c1754f81248a4301ab6cf5c08a8f2e5d7e2f36a24b9342aa8cb61ddd0299b2ce6005461e4bfe2d1559367e
