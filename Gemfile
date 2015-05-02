@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 #add pry rails
 gem 'pry-rails', :group => :development
+#add figaro to secure sendgrid and devise credentials as local variables
+gem 'figaro', '1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
