@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   def index
-        @posts = Post.all
-        authorize @posts
+    @posts = policy_scope(Post)
+    authorize @posts
+        
   end
 
   def show
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post was updated."
       redirect_to @post
     else
-      flast[:error] = "There was an saving the post. Please try again."
+      flash[:error] = "There was an saving the post. Please try again."
       render :edit
     end
   end
