@@ -12,6 +12,15 @@ require 'faker'
 end
 users = User.all
 
+#Create Topics
+15.times do
+  Topic.create!(
+    name: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph
+    )
+end
+topics = Topic.all
+
  # Note: by calling `User.new` instead of `create`,
  # we create an instance of User which isn't immediately saved to the database.
  
@@ -24,6 +33,7 @@ users = User.all
 50.times do   
   Post.create!(
     user: users.sample,
+    topic: topics.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
@@ -40,21 +50,45 @@ posts = Post.all
     )
 end
 
+# Create an admin user
+admin = User.new(
+  name: 'Admin User',
+  email: 'admin@example.com',
+  password: 'helloworld',
+  role: 'admin'
+  )
+admin.skip_confirmation!
+admin.save!
+
+# Create a moderator
+moderator = User.new(
+  name: 'Moderator User',
+  email: 'moderator@example.com',
+  password: 'helloworld',
+  role: 'moderator'
+  )
+moderator.skip_confirmation!
+moderator.save!
+
+# Create a member
+member = User.new(
+  name: 'Member User',
+  email: 'member@example.com',
+  password: 'helloworld'
+  )
+  member.skip_confirmation!
+  member.save!
+
 #<<<<<<< HEAD
 
 
 #=======
 #>>>>>>> 73d6f0f22340e5f3c29c8c979d89e767499df9ab
 
-user = User.first
-user.skip_reconfirmation!
-user.update_attributes!(
-    name: 'Jeremy',
-    email: 'j.a.lam@me.com',
-    password: '12345678'
-    )
+
 puts "Seed Finished"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Topic.count} topics created"
 
