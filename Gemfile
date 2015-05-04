@@ -30,6 +30,8 @@ gem 'pry-rails', :group => :development
 gem 'devise'
 #add figaro to handle sensitive data
 gem 'figaro', '1.0'
+#add pundit to declare user roles
+gem 'pundit'
 
 
 group :development, :test do
