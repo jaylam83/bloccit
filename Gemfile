@@ -32,6 +32,8 @@ gem 'devise'
 gem 'figaro', '1.0'
 #add pundit to declare user roles
 gem 'pundit'
+#install redcarpet to markdown posts
+gem 'redcarpet'
 
 
 group :development, :test do
