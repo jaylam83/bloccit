@@ -34,6 +34,11 @@ gem 'figaro', '1.0'
 gem 'pundit'
 #install redcarpet to markdown posts
 gem 'redcarpet'
+#installing carrierwave and mini_magick for images uploads
+gem 'carrierwave'
+gem 'mini_magick'
+#installing fog for image storage
+gem 'fog'
 
 
 group :development, :test do
