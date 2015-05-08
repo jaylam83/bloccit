@@ -39,6 +39,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 #installing fog for image storage
 gem 'fog'
+#insalling will_paginate to allow multiple pages
+gem 'will_paginate', '~> 3.0.5'
 
 
 group :development, :test do
