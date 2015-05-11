@@ -6,7 +6,7 @@
     <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
     submitted <%= time_ago_in_words(@post.created_at) %> ago by
     <%= @post.user.name %>
-  </small>
+    </small>
     <p><%= markdown_to_html @post.body %></p>
   </div>  
   <div class="col-md-4">
@@ -14,20 +14,23 @@
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
+
   <div class="col-md-8">
   <%= image_tag(@post.image.url) %>
   </div>
  
   <div class="col-md-8">
-<h2> Comments </h2>
-  <%= render @comments %>
-  <small>
-  <div class="col-md-8">
-<h4>Add a comment:</h4>
-  </div>
+    <h2> Comments </h2>
+      <%= render @comments %>
+        <small>
+          <div class="col-md-8">
+            <%if policy(@comments).create? %>
+              <h4>Add a comment:</h4>
+            </div>
 <%=render partial:'comments/form', locals: { topic: @topic, post: @post, comment: @post.comments.new} %>
   </small>
   </div>
   </div>
+  <% end %>
   
 
