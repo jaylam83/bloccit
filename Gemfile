@@ -53,6 +53,9 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  #installing rspec for error testing
+  gem 'rspec-rails', '~> 3.0'
+
 
 end
 
@@ -66,6 +69,7 @@ group :development do
   # Better error debugging
   gem 'binding_of_caller'
   gem 'better_errors'
+
 end
 
 
