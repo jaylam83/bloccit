@@ -10,10 +10,10 @@ describe Vote do
       expect(vote.valid?).to eq(true)
 
       vote2 = Vote.new(value: -1)
-      expect(vote.valid?).to eq(true)
+      expect(vote2.valid?).to eq(true)
 
       vote3 = Vote.new(value: 2)
-      expect(vote.valid?).to eq(false)
+      expect(vote3.valid?).to eq(false)
       end
     end
   end
