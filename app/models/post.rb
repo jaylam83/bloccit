@@ -12,7 +12,13 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
- 
+  def save_with_intial_vote
+    Post.transaction do
+    self.save 
+    self.create_vote     
+    end
+
+  end
 
   def up_votes
     votes.where(value: 1).count
