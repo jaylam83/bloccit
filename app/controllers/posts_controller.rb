@@ -19,10 +19,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post.topic = @topic
     authorize @post
+    # @post.save_with_intial_vote
     
 
-    if @post.save
-      @post.save_with_intial_vote
+    if @post.save_with_intial_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
