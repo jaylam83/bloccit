@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :topic
   has_many :votes
+  has_many :favorites, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   default_scope { order('rank DESC') }
