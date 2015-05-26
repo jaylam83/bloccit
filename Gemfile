@@ -56,6 +56,9 @@ group :development, :test do
   #installing rspec for error testing
   gem 'rspec-rails', '~> 3.0'
 
+  #installing Capybara for error testing
+  gem 'capybara'
+
 
 end
 

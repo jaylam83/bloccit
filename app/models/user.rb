@@ -21,7 +21,16 @@ mount_uploader :avatar, AvatarUploader
 
   def favorited(post)
     favorites.where(post_id: post.id).first
-  end       
+  end 
+
+  def voted(post)
+    if votes.where(post_id: post.id)
+      votes.where(post_id: post.id).first
+    else
+      nil
+    end
+  end
+
 end
 
 
