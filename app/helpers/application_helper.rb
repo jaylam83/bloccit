@@ -13,4 +13,22 @@ module ApplicationHelper
     redcarpet= Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render markdown).html_safe
   end
+
+  def up_vote_link_classes(dapost)
+    if current_user.voted(dapost) && current_user.voted(dapost).up_vote?
+      'voted'
+    else
+      " "
+  end
+end
+
+  def down_vote_link_classes(dapost)
+    if current_user.voted(dapost) && current_user.voted(dapost).down_vote?
+      'voted'
+    else
+      " "
+  end
+end
+
+
 end
