@@ -31,6 +31,18 @@ mount_uploader :avatar, AvatarUploader
     end
   end
 
+  def self.top_rated
+    self.select('users.*') #Select all attributes of the user
+    .select('COUNT(DISTINCT comments.id) AS comments_count') # Count comments made by user
+    .select('COUNT(DISTINCT posts.id) AS posts_count') # Count the posts made by the user
+    .select('COUNT(DISTINCT comments.id) + COUNT(DISTINCT posts.id) AS rank') #Adding the comment and post count and labelling the sum rank
+    .joins(:posts) #Ties the posts table to users table via user_id
+    .joins(:comments) #Ties the comments table to users table via user_id
+    .group('users.id') #Intrusts db to group resutls so that each user will be represented by a row
+    .order('rank DESC') #Intructs the database to order the results in descending order
+  end
+  
+
 end
 
 
