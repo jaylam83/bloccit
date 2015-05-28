@@ -44,8 +44,8 @@ gem 'will_paginate', '~> 3.0.5'
 #Installing new relic to monitor app performance
 gem 'newrelic_rpm'
 #Switching Web server to Puma to improve performance
-gem 'puma', group: :production
-gem 'puma', group: :development
+gem 'puma', :group => [:development, :production]
+
 
 
 group :development, :test do
@@ -63,6 +63,9 @@ group :development, :test do
 
   #installing Capybara for error testing
   gem 'capybara'
+
+  #Installing Factory Girl for better error testing of users
+  gem 'factory_girl_rails', '~> 4.0'
 
 
 end
