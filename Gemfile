@@ -41,6 +41,8 @@ gem 'mini_magick'
 gem 'fog'
 #insalling will_paginate to allow multiple pages
 gem 'will_paginate', '~> 3.0.5'
+#Installing new relic to monitor app performance
+gem 'newrelic_rpm'
 
 
 group :development, :test do
