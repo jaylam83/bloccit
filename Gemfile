@@ -43,6 +43,9 @@ gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 #Installing new relic to monitor app performance
 gem 'newrelic_rpm'
+#Switching Web server to Puma to improve performance
+gem 'puma', group: :production
+gem 'puma', group: :development
 
 
 group :development, :test do
