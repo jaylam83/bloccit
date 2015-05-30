@@ -1,24 +1,8 @@
-<div class="col-md-8">
-<div class="form-group">
-<%= form_for [post, comment] do |f| %>
-<% if comment.errors.any? %>
- <div class ="alert alert-danger">
-  <h6>There are <%= pluralize(comment.errors.count, "error") %>.</h6>
-  <ul>
-    <% comment.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
+<% if current_user %>
+  <h4>Add a comment:</h4>
+  <%= form_for [@post, @post.comments.build], remote: true do |f| %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
-
-<%= form_group_tag(comment.errors[:body]) do %>
-<%= f.label :body %>
-<%= f.text_field :body, class: 'form-control', placeholder: "Enter New Comment" %>
-<% end %>
-<%= f.submit "Create Comment", class: 'btn btn-success' %>
-
-<% end %>
-
-</div>
-</div>
